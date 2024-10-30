@@ -3,56 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patient Information System</title>
+    <title>Patient Profile</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Patient Information Form</h1>
-        <form id="patientForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required><br>
+        <!-- Doctor Assignment Section -->
+        <div id="doctorAssigned" class="doctor-assigned">
+            Select a doctor to assign to this patient:
+            <select id="doctorSelect" onchange="assignDoctor()">
+                <option value="" disabled selected>Select Doctor</option>
+                <option value="Dr. A.P. Kulkarni">Dr. John Smith</option>
+                <option value="Dr. Emma Johnson">Dr. Emma Johnson</option>
+                <option value="Dr. Alan Brown">Dr. Alan Brown</option>
+            </select>
+            <p id="assignedDoctor"></p>
+        </div>
 
-            <label for="age">Age:</label>
-            <input type="number" id="age" name="age" required><br>
-
-            <label for="gender">Gender:</label>
-            <select id="gender" name="gender" required>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
-            </select><br>
-
-            <label for="condition">Condition:</label>
-            <select id="condition" name="condition" required>
-                <option value="critical">Critical</option>
-                <option value="moderate">Moderate</option>
-                <option value="stable">Stable</option>
-            </select><br>
-
-            <label for="reason">Reason for Accident:</label>
-            <textarea id="reason" name="reason" rows="3" required></textarea><br>
-
-            <label for="medicines">List of Medicines Given:</label>
-            <textarea id="medicines" name="medicines" rows="3" required></textarea><br>
-
-            <label for="hospital">Hospital Taking To:</label>
-            <input type="text" id="hospital" name="hospital" required><br>
-
-            <label for="incharge">Ambulance In-charge Name:</label>
-            <input type="text" id="incharge" name="incharge" required><br>
-
-            <label for="doctor">Doctor Assigned:</label>
-            <input type="text" id="doctor" name="doctor" required><br>
-
-            <button type="submit">Submit</button>
-        </form>
-
-        <!-- Section for displaying the assigned doctor's name -->
-        <div id="doctorAssigned" class="doctor-assigned"></div>
-
-        <div id="patientInfo" class="patient-info">
-            <!-- Patient details will display here -->
+        <!-- Patient Profile -->
+        <div id="patientProfile" class="patient-info critical">
+            <h2>Patient Profile</h2>
+            <img src="image2.png" alt="Patient Image" class="patient-image">
+            <p><strong>Name:</strong>Shivshankar Mishra</p>
+            <p><strong>Age:</strong> 45</p>
+            <p><strong>Gender:</strong> Male</p>
+            <p><strong>Condition:</strong> Critical</p>
+            <p><strong>Reason for Accident:</strong> Car accident with severe injuries</p>
+            <p><strong>Medicines Given:</strong> Pain relievers, antibiotics</p>
+            <p><strong>Hospital:</strong> City General Hospital</p>
+            <p><strong>Ambulance In-charge:</strong> Alex Carter</p>
         </div>
     </div>
 
