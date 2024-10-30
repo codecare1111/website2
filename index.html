@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Information System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Patient Information Form</h1>
+        <form id="patientForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required><br>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select><br>
+
+            <label for="condition">Condition:</label>
+            <select id="condition" name="condition" required>
+                <option value="critical">Critical</option>
+                <option value="moderate">Moderate</option>
+                <option value="stable">Stable</option>
+            </select><br>
+
+            <label for="reason">Reason for Accident:</label>
+            <textarea id="reason" name="reason" rows="3" required></textarea><br>
+
+            <label for="medicines">List of Medicines Given:</label>
+            <textarea id="medicines" name="medicines" rows="3" required></textarea><br>
+
+            <label for="hospital">Hospital Taking To:</label>
+            <input type="text" id="hospital" name="hospital" required><br>
+
+            <label for="incharge">Ambulance In-charge Name:</label>
+            <input type="text" id="incharge" name="incharge" required><br>
+
+            <label for="doctor">Doctor Assigned:</label>
+            <input type="text" id="doctor" name="doctor" required><br>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <!-- Section for displaying the assigned doctor's name -->
+        <div id="doctorAssigned" class="doctor-assigned"></div>
+
+        <div id="patientInfo" class="patient-info">
+            <!-- Patient details will display here -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
