@@ -3,39 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patient Profile</title>
+    <title>Patient Information Form</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <!-- Doctor Assignment Section -->
-        <div id="doctorAssigned" class="doctor-assigned">
-            Available Doctors:
-            <select id="doctorSelect" onchange="assignDoctor()">
-                <option value="" disabled selected>Select Doctor</option>
-                <option value="Dr. A.P. Nadda">Dr. A.P. Nadda</option>
-                <option value="Dr. V.P. Sharma">Dr. V.P. Sharma</option>
-                <option value="Dr. Shilpa Kagaokar">Dr. Shilpa Kagaokar</option>
-            </select>
-            <p id="assignedDoctor"></p>
-        </div>
+        <h1>Patient Information Form</h1>
+        <form id="patientForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
 
-        <!-- Patient Profile -->
-        <div id="patientProfile" class="patient-info critical">
-            <h2>Patient Profile</h2>
-            <img src="image2.png" alt="Patient Image" class="patient-image">
-            <p><strong>Name:</strong>Shivshankar Mishra</p>
-            <p><strong>Age:</strong> 45</p>
-            <p><strong>Gender:</strong> Male</p>
-            <p><strong>Blood Group:</strong> AB+</p>
-            <p><strong>Condition:</strong> Critical</p>
-            <p><strong>Reason for Accident:</strong> Car accident with severe injuries</p>
-            <p><strong>Medicines Given:</strong> Amoxiclav, Ceftriaxone, Paracetamol, Ibuprofen, Diclofenac, and Tramadol.</p>
-            <p><strong>Hospital:</strong> City General Hospital</p>
-            <p><strong>Ambulance In-charge:</strong> Amol Mehta</p>
-        </div>
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required><br>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select><br>
+
+            <label for="condition">Condition:</label>
+            <select id="condition" name="condition" required>
+                <option value="critical">Critical</option>
+                <option value="moderate">Moderate</option>
+                <option value="stable">Stable</option>
+            </select><br>
+
+            <label for="reason">Reason for Accident:</label>
+            <textarea id="reason" name="reason" rows="3" required></textarea><br>
+
+            <label for="medicines">List of Medicines Given:</label>
+            <textarea id="medicines" name="medicines" rows="3" required></textarea><br>
+
+            <label for="hospital">Hospital Taking To:</label>
+            <input type="text" id="hospital" name="hospital" required><br>
+
+            <label for="incharge">Ambulance In-charge Name:</label>
+            <input type="text" id="incharge" name="incharge" required><br>
+
+            <label for="doctor">Suggested Doctor Assign:</label>
+            <input type="text" id="doctor" name="doctor" required><br>
+
+            <button type="submit">Submit</button>
+        </form>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        document.getElementById('patientForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Collect form data
+            const formData = {
+                name: document.getElementById('name').value,
+                age: document.getElementById('age').value,
+                gender: document.getElementById('gender').value,
+                condition: document.getElementById('condition').value,
+                reason: document.getElementById('reason').value,
+                medicines: document.getElementById('medicines').value,
+                hospital: document.getElementById('hospital').value,
+                incharge: document.getElementById('incharge').value,
+                doctor: document.getElementById('doctor').value,
+            };
+
+            // Store form data in localStorage to access on the next page
+            localStorage.setItem('patientData', JSON.stringify(formData));
+
+            // Redirect to the doctor page
+            window.location.href = 'doctor.html';
+        });
+    </script>
 </body>
 </html>

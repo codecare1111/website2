@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor's Portal</title>
+    <link rel="stylesheet" href="dstyles.css">
+</head>
+<body id="body">
+    <div class="container">
+        <!-- Assigned Doctor's Name -->
+        <div id="doctorName" class="doctor-assigned"></div>
+
+       
+
+        <h1>Doctor's Portal</h1>
+
+        <!-- Patient Information -->
+        <div id="patientInfo" class="patient-info"></div>
+
+        <!-- Doctor's Form -->
+        <h2>Add Treatment/Medicines</h2>
+        <form id="doctorForm">
+            <label for="treatment">Treatment/Medicines Given:</label>
+            <textarea id="treatment" name="treatment" rows="3" required></textarea><br>
+            <button type="submit">Add Treatment</button>
+        </form>
+        <br><br>
+         <!-- Form to Change Assigned Doctor -->
+         <form id="changeDoctorForm">
+            <label for="newDoctor">Change Assigned Doctor:</label>
+            <input type="text" id="newDoctor" name="newDoctor" placeholder="Enter new doctor name" required>
+            <button type="submit">Change Doctor</button>
+        </form>
+        <!-- Table to display medicines/treatment given -->
+        <h2>Treatment History</h2>
+        <table id="treatmentTable" border="1" cellspacing="0" cellpadding="5">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Medicines/Treatment</th>
+                    <th>Doctor Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be added dynamically -->
+            </tbody>
+        </table>
+
+        <!-- Section for file upload -->
+        <h2>Upload Patient Reports</h2>
+        <form id="fileUploadForm" enctype="multipart/form-data">
+            <label for="patientReports">Upload Reports (Multiple files allowed):</label>
+            <input type="file" id="patientReports" name="patientReports" accept=".pdf,.docx,.jpg,.png" multiple required><br>
+            <button type="submit">Upload Reports</button>
+        </form>
+
+        <div id="fileUploadStatus"></div>
+
+        <!-- Section to display uploaded files -->
+        <h2>Uploaded Reports</h2>
+        <div id="filePreview"></div>
+    </div>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyBwURjBpvXDm01P86EmI0IK2iCnmEvHHco",
+          authDomain: "carecode-c89dc.firebaseapp.com",
+          projectId: "carecode-c89dc",
+          storageBucket: "carecode-c89dc.firebasestorage.app",
+          messagingSenderId: "682774382667",
+          appId: "1:682774382667:web:2cf94cc7047ac42b69e5ce",
+          measurementId: "G-XMDCWLWXVN"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
+
+    <script src="dscript.js"></script>
+</body>
+</html>
