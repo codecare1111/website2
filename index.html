@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Care Code Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Care Code Portal</h1>
+        <div class="button-container">
+            <button id="patientPortalBtn">Patient</button>
+            <button id="doctorPortalBtn">Doctor</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('doctorPortalBtn').addEventListener('click', () => {
+            window.location.href = 'login.html';
+        });
+
+        document.getElementById('patientPortalBtn').addEventListener('click', () => {
+            window.location.href = 'http://localhost/Project%20cc/patient.php';
+        });
+    </script>
+</body>
+</html>

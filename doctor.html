@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor's Patient Profile</title>
+    <link rel="stylesheet" href="doctor.css">
+    <script src="doctor.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Patient Profile</h1>
+        <div id="patientDetails">
+            <!-- Patient details will be dynamically populated here -->
+        </div>
+        <h2>Treatment History</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Treatment</th>
+                    <th>Doctor</th>
+                </tr>
+            </thead>
+            <tbody id="treatmentTable">
+                <!-- Treatment history will be dynamically populated here -->
+            </tbody>
+        </table>
+        <button id="editPatientBtn">Add Treatments</button>
+    </div>
+</body>
+</html>

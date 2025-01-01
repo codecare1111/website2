@@ -1,0 +1,58 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f9;
+}
+
+.container {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+}
+
+/* Header and text styles */
+h1 {
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+p {
+    margin-bottom: 30px;
+    color: #666666;
+}
+
+/* Button styles */
+.button-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.role-button {
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.role-button:hover {
+    background-color: #0056b3;
+}
+
+.role-button:active {
+    transform: scale(0.98);
+}
